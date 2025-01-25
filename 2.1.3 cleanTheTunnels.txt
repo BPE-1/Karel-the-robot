@@ -1,0 +1,27 @@
+//2.1.3
+void cleanTheTunnels(){
+    repeat(10){
+        if (onBeeper()){
+            turnLeft();
+            pickBeeper();
+            repeat(10){
+                if (beeperAhead()){
+                    moveForward();
+                    pickBeeper();
+                }  
+            }
+            turnAround();
+            repeat(10) {
+                if (frontIsClear()){
+                    moveForward();
+                }           
+            }
+            turnLeft();
+            if (frontIsClear()){
+                moveForward();
+            }   
+        } if(!onBeeper() && frontIsClear()){
+            moveForward();    
+        }
+    }
+}
