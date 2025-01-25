@@ -1,0 +1,41 @@
+//2.3.1
+void saveTheFlowers(){
+    turnLeft();
+    repeat(5){
+        mte1();
+    }
+    turnRight();
+    moveForward();
+    dropBeeper();
+    moveForward();
+    turnRight();
+    moveForward();
+    repeat(4){
+        mte2();
+    }
+}
+
+void mte1(){
+    while (frontIsClear() && (!rightIsClear())){
+        moveForward();
+    }          
+    while (frontIsClear() && (rightIsClear())){
+        turnRight();
+        moveForward();
+        pickBeeper();
+        turnLeft();
+    }
+}
+
+void mte2(){
+    while (frontIsClear() && (!rightIsClear())){
+        moveForward();
+    }
+    while (!frontIsClear() && (leftIsClear())){
+        dropBeeper();
+        turnLeft();
+        moveForward();
+        turnRight();
+        moveForward();
+    }
+}
