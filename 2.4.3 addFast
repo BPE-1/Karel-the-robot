@@ -1,0 +1,73 @@
+//2.4.3
+void addFast(){
+    repeat(8){
+        if (onBeeper() && rightIsClear()){
+            moveForward();
+            if(!onBeeper() && !beeperAhead()){
+                sumRow();
+            }   
+            else if(!onBeeper() && beeperAhead() || onBeeper() && !beeperAhead()){
+                carryRow();
+            }
+            else if(onBeeper() && beeperAhead()){
+                moveForward();
+                moveForward();
+                dropBeeper();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                moveForward();
+                moveForward();
+                turnAround();
+            }            
+        }
+        if (!onBeeper() && rightIsClear()){
+            moveForward();
+            if (!onBeeper()&& !beeperAhead()){
+                moveForward();
+                moveForward();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                moveForward();
+                moveForward();
+                turnAround();
+            }
+            else if (onBeeper() && !beeperAhead() || !onBeeper() && beeperAhead()){
+                sumRow();
+            }
+            else if (onBeeper() && beeperAhead()){
+                carryRow();
+            }
+        }
+    }
+}
+
+void carryRow(){
+    moveForward();
+    moveForward();
+    turnRight();
+    moveForward();
+    turnRight();
+    moveForward();
+    dropBeeper();
+    moveForward();
+    moveForward();
+    turnAround();
+}
+
+void sumRow(){
+    moveForward();
+    moveForward();
+    dropBeeper();
+    turnRight();
+    moveForward();
+    turnRight();
+    moveForward();
+    moveForward();
+    moveForward();
+    turnAround();
+}
