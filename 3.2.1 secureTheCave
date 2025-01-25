@@ -1,0 +1,73 @@
+//3.2.1 
+void secureTheCave(){
+    repeat(10){
+        turnLeft();
+        while (!beeperAhead() && frontIsClear()){
+            moveForward();
+        }       
+        if (beeperAhead()){
+            moveForward();         
+            if (!beeperAhead()){
+                turnAround();
+                while (frontIsClear()){
+                    IOBPB();
+                    moveForward();
+                }
+                turnAround();            
+                dropBeeper();
+                moveForward();
+                turnRight();
+                if(frontIsClear()){
+                    moveForward();
+                }
+                
+            }
+        }
+        if (beeperAhead()){
+            moveForward();
+            if (!beeperAhead()){
+                turnAround();
+                while (frontIsClear()){                  
+                    IOBPB();
+                    moveForward();
+                    
+                }
+                turnAround();            
+                dropBeeper();
+                moveForward();
+                dropBeeper();
+                moveForward();
+                turnRight();  
+                if(frontIsClear()){
+                    moveForward();
+                }                
+            }
+            if (beeperAhead()){
+                moveForward();
+                turnAround();
+                while (frontIsClear()){
+                    IOBPB();
+                    moveForward();
+                }
+                turnAround();           
+                dropBeeper();
+                moveForward();
+                dropBeeper();
+                moveForward();
+                dropBeeper();
+                moveForward();
+                turnRight();
+                if(frontIsClear()){
+                    moveForward();
+                }              
+            }                                                                                      
+        }  
+    }
+}
+
+
+void IOBPB(){
+    if (onBeeper()){
+        pickBeeper();
+    }
+}
