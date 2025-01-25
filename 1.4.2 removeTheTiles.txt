@@ -1,0 +1,20 @@
+//1.4.2
+void removeTheTiles(){
+    while (onBeeper()){
+        if(onBeeper()){
+            pickBeeper();
+            if(beeperAhead()){
+                moveForward();
+            }
+            else{
+                turnLeft();
+                moveForward();
+            }
+        }
+        if(!frontIsClear()){
+            turnLeft();
+            pickBeeper();
+            moveForward(); 
+        }
+    } 
+}
