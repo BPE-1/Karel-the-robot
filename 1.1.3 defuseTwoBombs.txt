@@ -4,3 +4,11 @@ void defuseTwoBombs(){
     turnLeft();
     defuseSingleBomb();   
 }
+
+void defuseSingleBomb(){
+    moveNineForward();
+    pickBeeper();
+    turnAround();
+    moveNineForward();
+    turnAround();    
+}
