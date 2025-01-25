@@ -1,0 +1,25 @@
+//2.1.1
+void hangTheLampions(){
+    repeat(10){
+        pickBeeper();
+        turnLeft();
+        repeat(9) {
+            if(frontIsClear()){
+                moveForward();
+            }      
+        }
+        if (!frontIsClear()){
+            dropBeeper();
+            turnAround();
+            repeat(9) {
+                if(frontIsClear()){
+                    moveForward();
+                }            
+            }
+            if (leftIsClear()){
+                turnLeft();
+                moveForward();
+            }
+        }
+    }
+}
