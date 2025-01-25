@@ -1,0 +1,49 @@
+//3.1.1 
+void partyAgain(){
+    repeat(10){
+        if (onBeeper()){
+            pickBeeper();
+            turnLeft();
+        }       
+        repeat(5){
+            moveForward();
+        }
+        if (!frontIsClear()){
+            dropBeeper();
+            turnAround();
+            repeat(5){
+                moveForward();
+            }
+            turnLeft();
+            if (frontIsClear()){
+                moveForward();
+            }
+        }       
+        else if (frontIsClear()){
+            moveForward();
+            if (frontIsClear()){
+                moveForward();
+                dropBeeper();
+                turnAround();
+                repeat(7){
+                    moveForward();                   
+                }
+                turnLeft();
+                if (frontIsClear()){
+                    moveForward();
+                }
+            }           
+            else {
+                dropBeeper();
+                turnAround();
+                repeat(6){
+                    moveForward();                  
+                }
+                turnLeft();
+                if (frontIsClear()){
+                    moveForward();
+                }
+            }
+        }
+    }    
+}
