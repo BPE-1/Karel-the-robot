@@ -29,3 +29,46 @@ void ctrRightTurn(){
         }       
     }
 }
+
+
+void ctrLeftTurn(){
+    repeat(10){
+        if (frontIsClear()){
+            if (onBeeper()){
+                pickBeeper();
+                moveForward();
+            }
+            else{
+                moveForward();
+            }
+        }
+        else{
+            if (onBeeper()){
+                pickBeeper();
+            }
+            turnRight();
+            moveForward();
+            turnRight();
+        }       
+    }
+}
+
+
+void ctrOneRow(){
+    repeat(10){
+        if (frontIsClear()){
+            if (onBeeper()){
+                pickBeeper();
+                moveForward();
+            }
+            else{
+                moveForward();
+            }
+        }
+        else{
+            if (onBeeper()){
+                pickBeeper();
+            }
+        }
+    }
+}
