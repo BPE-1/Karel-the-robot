@@ -1,0 +1,25 @@
+//2.2.3
+void addSlow(){
+    while (frontIsClear()){
+        decrement();
+        if (frontIsClear()){
+            turnAround();
+            toEnd();
+            turnRight();
+            moveForward();
+            turnRight();
+            increment();
+            turnAround();
+            toEnd();
+            turnLeft();
+            moveForward();
+            turnLeft();
+        }
+    }
+}
+
+void toEnd(){
+    while (frontIsClear()){
+        moveForward();
+    }
+}
