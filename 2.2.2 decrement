@@ -1,0 +1,12 @@
+//2.2.2
+void decrement(){
+    while (!onBeeper()){
+        dropBeeper();
+        if(frontIsClear()){
+            moveForward();
+        }
+    }
+    if(onBeeper()){
+        pickBeeper();
+    }
+}
