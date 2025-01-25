@@ -1,0 +1,51 @@
+//3.1.2
+void fetchTheStars(){
+    repeat(10){
+        if (!onBeeper()){
+            turnLeft();
+        }       
+        repeat(5){
+            moveForward();
+        }
+        if (!frontIsClear()){
+            pickBeeper();
+            turnAround();
+            repeat(5){
+                moveForward();
+            }
+            dropBeeper();
+            turnLeft();
+            if (frontIsClear()){
+                moveForward();
+            }
+        }       
+        else if (frontIsClear()){
+            moveForward();
+            if (frontIsClear()){
+                moveForward();
+                pickBeeper();
+                turnAround();
+                repeat(7){
+                    moveForward();                   
+                }
+                dropBeeper();
+                turnLeft();
+                if (frontIsClear()){
+                    moveForward();
+                }
+            }           
+            else {
+                pickBeeper();
+                turnAround();
+                repeat(6){
+                    moveForward();                  
+                }
+                dropBeeper();
+                turnLeft();
+                if (frontIsClear()){
+                    moveForward();
+                }
+            }
+        }
+    }    
+}
